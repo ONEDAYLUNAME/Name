@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For Nuname ❤️</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:sans-serif;
+}
+
+body{
+
+background:linear-gradient(135deg,#6f00ff,#ff3cac,#ff74d4);
+
+height:100vh;
+
+overflow:hidden;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+color:white;
+
+}
+
+.card{
+
+width:90%;
+
+max-width:400px;
+
+padding:30px;
+
+border-radius:25px;
+
+background:rgba(255,255,255,.15);
+
+backdrop-filter:blur(15px);
+
+text-align:center;
+
+box-shadow:0 0 30px rgba(255,255,255,.2);
+
+}
+
+h1{
+
+font-size:35px;
+
+margin-bottom:15px;
+
+}
+
+button{
+
+padding:15px 35px;
+
+border:none;
+
+border-radius:50px;
+
+font-size:18px;
+
+background:#ff4da6;
+
+color:white;
+
+cursor:pointer;
+
+margin-top:25px;
+
+}
+
+#love{
+
+display:none;
+
+animation:fade 1s;
+
+}
+
+img{
+
+width:90%;
+
+border-radius:20px;
+
+margin-top:15px;
+
+}
+
+#timer{
+
+font-size:22px;
+
+margin-top:20px;
+
+}
+
+@keyframes fade{
+
+from{
+
+opacity:0;
+
+transform:scale(.8);
+
+}
+
+to{
+
+opacity:1;
+
+transform:scale(1);
+
+}
+
+}
+
+.heart{
+
+position:fixed;
+
+color:pink;
+
+animation:fly 6s linear infinite;
+
+}
+
+@keyframes fly{
+
+0%{
+
+transform:translateY(100vh);
+
+opacity:1;
+
+}
+
+100%{
+
+transform:translateY(-100vh);
+
+opacity:0;
+
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="card">
+
+<div id="home">
+
+<h1>💜 มีอะไรจะบอก...</h1>
+
+<p>ถึงคนโปรดของเค้า</p>
+
+<h2>นุเนม ❤️</h2>
+
+<button onclick="openLove()">
+
+เปิดหัวใจ
+
+</button>
+
+</div>
+
+<div id="love">
+
+<h1>💕</h1>
+
+<h2>เค้ารักเธอที่สุดในโลกกเยยยยยย</h2>
+
+<p>
+
+อยากอยู่ด้วยตลอดไปเลยนะ
+
+คนโปรดของฉั๊นน 💜
+
+</p>
+
+<div id="timer"></div>
+
+<button onclick="alert('รักเธอที่สุดเลย ❤️')">
+
+รักเธอที่สุด
+
+</button>
+
+</div>
+
+</div>
+
+<script>
+
+function openLove(){
+
+document.getElementById("home").style.display="none";
+
+document.getElementById("love").style.display="block";
+
+}
+
+setInterval(()=>{
+
+let heart=document.createElement("div");
+
+heart.className="heart";
+
+heart.innerHTML="💖";
+
+heart.style.left=Math.random()*100+"vw";
+
+heart.style.fontSize=Math.random()*25+15+"px";
+
+document.body.appendChild(heart);
+
+setTimeout(()=>heart.remove(),6000);
+
+},300);
+
+const start=new Date("2025-10-05");
+
+function update(){
+
+let now=new Date();
+
+let diff=now-start;
+
+let day=Math.floor(diff/1000/60/60/24);
+
+document.getElementById("timer").innerHTML=
+
+"รู้จักกันมาแล้ว ❤️<br>"+day+" วัน";
+
+}
+
+setInterval(update,1000);
+
+update();
+
+</script>
+
+</body>
+
+</html>
